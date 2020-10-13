@@ -1,0 +1,17 @@
+*.ipynb
+*.ipynb_checkpoints
+*.xlsx
+*.png
+.pytest_cache
+__pycache__
+config.py
+config_ECommSalesDW.py
+.ipynb_checkpoints
+py_ETL/kroger/cached_queries
+py_ETL/kroger/Comparisons
+py_ETL/kroger/Restate_Actuals
+py_ETL/kroger/Restates
+py_ETL/kroger/Restates
+py_ETL/kroger/kroger_sql/SQL_Requests/
+SQL_Requests
+
