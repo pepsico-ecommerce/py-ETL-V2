@@ -1,0 +1,1971 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/14/2020 9:18:35 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="PEPWUL161202"
+  DTS:CreatorName="CORPPVT\09276425"
+  DTS:DTSID="{0F8E01E7-512B-4EF7-ADED-A8317D65C579}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1301.433"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="ExecManualLoad"
+  DTS:PackageType="5"
+  DTS:VersionBuild="675"
+  DTS:VersionGUID="{611D277E-A1EB-41C2-A95F-666896B87284}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B6E82246-7055-40D2-8C53-3929DDFE241F}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::vCSVFilePath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="L5-Business Segment"
+              DTS:DTSID="{B870953C-2631-4C10-91BC-12F7398B112F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="L4-Category"
+              DTS:DTSID="{F3A25739-FFB5-492F-B27C-9A71A5FD083A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="L3-Sub Category"
+              DTS:DTSID="{B3DF6313-32DE-49AB-B730-746C4DB07C1F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="L1-Product ID"
+              DTS:DTSID="{91F591D8-59B3-4F5A-A8ED-44FAE0781A62}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product_Name"
+              DTS:DTSID="{53537D24-9B98-4EC8-A6B2-88F3E3FF8D0C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UPC"
+              DTS:DTSID="{1F568308-F0B4-4033-A349-A41D534FB1E0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Week End Date"
+              DTS:DTSID="{4AF21666-2491-4384-857B-DEAA023DD591}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Shopping Channel"
+              DTS:DTSID="{BACE07A6-E5C7-409E-B92A-E67EDAE75A46}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sales"
+              DTS:DTSID="{6180D635-FBD3-4CF0-A24C-42326D2A920A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TDWH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B8E0FAAE-AB0B-4604-BF3B-CCAB73924DD2}"
+      DTS:ObjectName="TDWH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=PEPWDS01340\SQLITGEC1T;Initial Catalog=TDWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TDWH 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FC8A1C6C-5237-40C6-A7D9-49113EA51604}"
+      DTS:ObjectName="TDWH 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=PEPWDS01340\SQLITGEC1T;Initial Catalog=TDWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{310C51E6-59DC-4DF0-A710-7E00432AFB9D}"
+      DTS:ObjectName="CustomerName">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">sams_pickup</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AE881254-F107-4B0C-941F-CB233FDCE4F0}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vCSVFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5DF55FCB-8A4B-42F2-95BA-D5F82CA3CF65}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vCSVRootFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\CompaniesSourceFilesConvertedToCSV</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1CCFD554-3575-4B27-8C11-917E7329AEC1}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vCustMeijer">
+      <DTS:VariableValue
+        DTS:DataType="8">Meijer</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A4AF8166-7281-4503-A64A-0926D90B9C80}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vJobCheckDelay">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5F55C17A-3F98-4174-A7CA-85095A57342A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vJobCheckOutlookDelay">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{903A75B1-08F1-48D6-9244-D937D97D9DD3}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vJobName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{52FE7714-68B0-471D-A75E-308AA920EAA0}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vJobStep">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0FA5E022-35CF-4E14-9784-566B23D33EDF}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vPythonCmd">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{613F2285-00B1-4407-A33B-61B54A537325}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vPythonPath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\09276425\AppData\Local\Programs\Python\Python37\python.exe</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{019A1F33-5151-4AC8-B016-DF28B93F00D7}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vStdPythonProg">
+      <DTS:VariableValue
+        DTS:DataType="8">main.py</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8E485D6A-7A74-4DE5-B22C-39FD39003BE1}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vWorkingDir">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\09276425\Documents\GitHub\py-ETL-V2</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SEQ Job Status"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{1469625D-90D2-4C5A-9218-D1FEB02B8EDF}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQ Job Status">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQ Job Status\Expression Task"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{B9C0D08C-AF17-441E-8027-1D5D03AD25E2}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Expression Task"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="1 == 1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQ Job Status\PROC Python Add Outlook Job Chk Reminder"
+          DTS:CreationName="Microsoft.ExecuteProcess"
+          DTS:Description="Execute Process Task"
+          DTS:DTSID="{82BBBF7A-5987-48FF-862B-8155346B6282}"
+          DTS:ExecutableType="Microsoft.ExecuteProcess"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="PROC Python Add Outlook Job Chk Reminder"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="Arguments">"make_outlook_apptmt.py" + " --job " +  @[User::vJobName] + " --delay " +  @[User::vJobCheckOutlookDelay]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Executable">@[User::vPythonPath]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="WorkingDirectory">@[User::vWorkingDir]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <ExecuteProcessData
+              Executable="C:\Users\09276425\AppData\Local\Programs\Python\Python37\python.exe"
+              Arguments="make_outlook_apptmt.py --job  --delay "
+              WorkingDirectory="C:\Users\09276425\Documents\GitHub\py-ETL-V2" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQ Job Status\PROC Python Get Job &amp; Load Status, Send Email"
+          DTS:CreationName="Microsoft.ExecuteProcess"
+          DTS:Description="Execute Process Task"
+          DTS:DTSID="{90164D4E-9305-493D-BE17-884439E57D0F}"
+          DTS:ExecutableType="Microsoft.ExecuteProcess"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="PROC Python Get Job &amp; Load Status, Send Email"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="Arguments">"get_job_status.py" + " --job " +  @[User::vJobName] + " --cust " +  @[$Package::CustomerName]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Executable">@[User::vPythonPath]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="WorkingDirectory">@[User::vWorkingDir]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <ExecuteProcessData
+              Executable="C:\Users\09276425\AppData\Local\Programs\Python\Python37\python.exe"
+              Arguments="get_job_status.py --job  --cust sams_pickup"
+              WorkingDirectory="C:\Users\09276425\Documents\GitHub\py-ETL-V2" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQ Job Status\SQL SS Agent Job Wait, Get Status (Prog Will WAIT!!)"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{330C3DBA-73D1-4B5E-A3B8-D5D8C55FF348}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL SS Agent Job Wait, Get Status (Prog Will WAIT!!)"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B8E0FAAE-AB0B-4604-BF3B-CCAB73924DD2}"
+              SQLTask:SqlStatementSource="-- Wait to allow job to finish&#xA;WAITFOR DELAY ?&#xA;&#xA;-- Get job status&#xA;EXEC [TDWH].[dbo].[SP_ManualFileLoad_ChkJobStatus] @job_name=?&#xA;&#xA;-- Get load status&#xA;EXEC  [TDWH].[dbo].[SP_ManualFileLoad_ChkLoadStatus] &#x9;@cust = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::vJobCheckDelay"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::vJobName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="$Package::CustomerName"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="129"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQ Job Status.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{5E829D0B-4F09-4C26-A184-A2EEDA7A4436}"
+          DTS:EvalOp="3"
+          DTS:Expression="LEN(@vJobCheckDelay) &gt; 0"
+          DTS:From="Package\SEQ Job Status\Expression Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SEQ Job Status\SQL SS Agent Job Wait, Get Status (Prog Will WAIT!!)" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQ Job Status.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{57723929-7BE7-4F96-8FF6-EED01CE18602}"
+          DTS:EvalOp="3"
+          DTS:Expression="LEN(@vJobCheckOutlookDelay) &gt; 0"
+          DTS:From="Package\SEQ Job Status\Expression Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\SEQ Job Status\PROC Python Add Outlook Job Chk Reminder" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQ Job Status.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{578F466F-A718-41F3-970E-DA4A598CE05C}"
+          DTS:From="Package\SEQ Job Status\SQL SS Agent Job Wait, Get Status (Prog Will WAIT!!)"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\SEQ Job Status\PROC Python Get Job &amp; Load Status, Send Email" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SEQ Prep Data"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{7E7E63BB-DF06-4315-AB67-307E1D9DAC78}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SEQ Prep Data">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SEQ Prep Data\Expression Task"
+          DTS:CreationName="Microsoft.ExpressionTask"
+          DTS:Description="Expression Task"
+          DTS:DTSID="{BF49F033-D6D5-426B-84AE-51C9D92439ED}"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Expression Task"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExpressionTask
+              Expression="1 == 1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQ Prep Data\PROC Python Cr Load File"
+          DTS:CreationName="Microsoft.ExecuteProcess"
+          DTS:Description="Execute Process Task"
+          DTS:DTSID="{1E65C4FC-D143-49BA-828B-9C99DA110FCA}"
+          DTS:ExecutableType="Microsoft.ExecuteProcess"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="PROC Python Cr Load File"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="Arguments">@[User::vStdPythonProg] + " --customer " +  @[$Package::CustomerName]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="Executable">@[User::vPythonPath]</DTS:PropertyExpression>
+          <DTS:PropertyExpression
+            DTS:Name="WorkingDirectory">@[User::vWorkingDir]</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <ExecuteProcessData
+              Executable="C:\Users\09276425\AppData\Local\Programs\Python\Python37\python.exe"
+              Arguments="main.py --customer sams_pickup"
+              WorkingDirectory="C:\Users\09276425\Documents\GitHub\py-ETL-V2" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQ Prep Data\SEQ Meijer"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{9A20A007-9AD6-48D7-8F1B-F803A8F2497A}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SEQ Meijer">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container"
+              DTS:CreationName="STOCK:FOREACHLOOP"
+              DTS:Description="Foreach Loop Container"
+              DTS:DTSID="{F0087ED2-7E34-48A6-BDCB-C8221CEE7EE6}"
+              DTS:ExecutableType="STOCK:FOREACHLOOP"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Foreach Loop Container">
+              <DTS:ForEachEnumerator
+                DTS:CreationName="Microsoft.ForEachFileEnumerator"
+                DTS:DTSID="{A48CE7C5-F578-422F-9E93-FAE7CB303569}"
+                DTS:ObjectName="{A48CE7C5-F578-422F-9E93-FAE7CB303569}">
+                <DTS:PropertyExpression
+                  DTS:Name="Directory">@[User::vCSVRootFolder] + "\\" +  @[User::vCustMeijer]</DTS:PropertyExpression>
+                <DTS:ObjectData>
+                  <ForEachFileEnumeratorProperties>
+                    <FEFEProperty
+                      Folder="C:\CompaniesSourceFilesConvertedToCSV\Meijer" />
+                    <FEFEProperty
+                      FileSpec="*.csv" />
+                    <FEFEProperty
+                      FileNameRetrievalType="0" />
+                    <FEFEProperty
+                      Recurse="0" />
+                  </ForEachFileEnumeratorProperties>
+                </DTS:ObjectData>
+              </DTS:ForEachEnumerator>
+              <DTS:Variables />
+              <DTS:Executables>
+                <DTS:Executable
+                  DTS:refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV"
+                  DTS:CreationName="Microsoft.Pipeline"
+                  DTS:Description="Data Flow Task"
+                  DTS:DTSID="{9C12B842-B7FC-468B-9B9E-E6A851E792B7}"
+                  DTS:ExecutableType="Microsoft.Pipeline"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="Load CSV"
+                  DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <pipeline
+                      version="1">
+                      <components>
+                        <component
+                          refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Derived Column"
+                          componentClassID="Microsoft.DerivedColumn"
+                          contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                          description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                          name="Derived Column"
+                          usesDispositions="true">
+                          <inputs>
+                            <input
+                              refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Derived Column.Inputs[Derived Column Input]"
+                              description="Input to the Derived Column Transformation"
+                              name="Derived Column Input">
+                              <externalMetadataColumns />
+                            </input>
+                          </inputs>
+                          <outputs>
+                            <output
+                              refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Derived Column.Outputs[Derived Column Output]"
+                              description="Default Output of the Derived Column Transformation"
+                              exclusionGroup="1"
+                              name="Derived Column Output"
+                              synchronousInputId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Derived Column.Inputs[Derived Column Input]">
+                              <externalMetadataColumns />
+                            </output>
+                            <output
+                              refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Derived Column.Outputs[Derived Column Error Output]"
+                              description="Error Output of the Derived Column Transformation"
+                              exclusionGroup="1"
+                              isErrorOut="true"
+                              name="Derived Column Error Output"
+                              synchronousInputId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Derived Column.Inputs[Derived Column Input]">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                                  dataType="i4"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                                  name="ErrorCode"
+                                  specialFlags="1" />
+                                <outputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                                  dataType="i4"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                                  name="ErrorColumn"
+                                  specialFlags="2" />
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                          </outputs>
+                        </component>
+                        <component
+                          refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source"
+                          componentClassID="Microsoft.FlatFileSource"
+                          contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                          description="Flat File Source"
+                          localeId="1033"
+                          name="Flat File Source"
+                          usesDispositions="true"
+                          version="1">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Specifies whether zero-length columns are treated as null."
+                              name="RetainNulls">false</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                              name="FileNameColumnName"></property>
+                          </properties>
+                          <connections>
+                            <connection
+                              refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Connections[FlatFileConnection]"
+                              connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                              connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                              name="FlatFileConnection" />
+                          </connections>
+                          <outputs>
+                            <output
+                              refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output]"
+                              name="Flat File Source Output">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[L5-Business Segment]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[L5-Business Segment]"
+                                  length="50"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[L5-Business Segment]"
+                                  name="L5-Business Segment"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[L4-Category]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[L4-Category]"
+                                  length="50"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[L4-Category]"
+                                  name="L4-Category"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[L3-Sub Category]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[L3-Sub Category]"
+                                  length="50"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[L3-Sub Category]"
+                                  name="L3-Sub Category"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[L1-Product ID]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[L1-Product ID]"
+                                  length="50"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[L1-Product ID]"
+                                  name="L1-Product ID"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Product_Name]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Product_Name]"
+                                  length="50"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Product_Name]"
+                                  name="Product_Name"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[UPC]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[UPC]"
+                                  length="50"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[UPC]"
+                                  name="UPC"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Week End Date]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Week End Date]"
+                                  length="50"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Week End Date]"
+                                  name="Week End Date"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Shopping Channel]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Shopping Channel]"
+                                  length="50"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Shopping Channel]"
+                                  name="Shopping Channel"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                                <outputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Sales]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  errorOrTruncationOperation="Conversion"
+                                  errorRowDisposition="FailComponent"
+                                  externalMetadataColumnId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sales]"
+                                  length="50"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Sales]"
+                                  name="Sales"
+                                  truncationRowDisposition="FailComponent">
+                                  <properties>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                      name="FastParse">false</property>
+                                    <property
+                                      dataType="System.Boolean"
+                                      description="Indicates whether the data is in binary format."
+                                      name="UseBinaryFormat">false</property>
+                                  </properties>
+                                </outputColumn>
+                              </outputColumns>
+                              <externalMetadataColumns
+                                isUsed="True">
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[L5-Business Segment]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="L5-Business Segment" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[L4-Category]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="L4-Category" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[L3-Sub Category]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="L3-Sub Category" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[L1-Product ID]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="L1-Product ID" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Product_Name]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="Product_Name" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[UPC]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="UPC" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Week End Date]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="Week End Date" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Shopping Channel]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="Shopping Channel" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sales]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="Sales" />
+                              </externalMetadataColumns>
+                            </output>
+                            <output
+                              refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Error Output]"
+                              isErrorOut="true"
+                              name="Flat File Source Error Output">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                                  codePage="1252"
+                                  dataType="text"
+                                  description="Flat File Source Error Output Column"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                                  name="Flat File Source Error Output Column" />
+                                <outputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                                  dataType="i4"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                                  name="ErrorCode"
+                                  specialFlags="1" />
+                                <outputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                                  dataType="i4"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                                  name="ErrorColumn"
+                                  specialFlags="2" />
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                          </outputs>
+                        </component>
+                        <component
+                          refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination"
+                          componentClassID="Microsoft.OLEDBDestination"
+                          contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                          description="OLE DB Destination"
+                          name="OLE DB Destination"
+                          usesDispositions="true"
+                          version="4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                              name="CommandTimeout">0</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the name of the database object used to open a rowset."
+                              name="OpenRowset">[DataStage].[STG_MeijerSales]</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the variable that contains the name of the database object used to open a rowset."
+                              name="OpenRowsetVariable"></property>
+                            <property
+                              dataType="System.String"
+                              description="The SQL command to be executed."
+                              name="SqlCommand"
+                              UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the column code page to use when code page information is unavailable from the data source."
+                              name="DefaultCodePage">1252</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Forces the use of the DefaultCodePage property value when describing character data."
+                              name="AlwaysUseDefaultCodePage">false</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the mode used to access the database."
+                              name="AccessMode"
+                              typeConverter="AccessMode">3</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                              name="FastLoadKeepIdentity">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                              name="FastLoadKeepNulls">false</property>
+                            <property
+                              dataType="System.String"
+                              description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                              name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                              name="FastLoadMaxInsertCommitSize">2147483647</property>
+                          </properties>
+                          <connections>
+                            <connection
+                              refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Connections[OleDbConnection]"
+                              connectionManagerID="Package.ConnectionManagers[TDWH 1]"
+                              connectionManagerRefId="Package.ConnectionManagers[TDWH 1]"
+                              description="The OLE DB runtime connection used to access the database."
+                              name="OleDbConnection" />
+                          </connections>
+                          <inputs>
+                            <input
+                              refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                              errorOrTruncationOperation="Insert"
+                              errorRowDisposition="FailComponent"
+                              hasSideEffects="true"
+                              name="OLE DB Destination Input">
+                              <inputColumns>
+                                <inputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UPC]"
+                                  cachedCodepage="1252"
+                                  cachedDataType="str"
+                                  cachedLength="50"
+                                  cachedName="UPC"
+                                  externalMetadataColumnId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UPC]"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[UPC]" />
+                                <inputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[L5-Business Segment]"
+                                  cachedCodepage="1252"
+                                  cachedDataType="str"
+                                  cachedLength="50"
+                                  cachedName="L5-Business Segment"
+                                  externalMetadataColumnId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[L5BusinessSegment]"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[L5-Business Segment]" />
+                                <inputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[L4-Category]"
+                                  cachedCodepage="1252"
+                                  cachedDataType="str"
+                                  cachedLength="50"
+                                  cachedName="L4-Category"
+                                  externalMetadataColumnId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[L4Category]"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[L4-Category]" />
+                                <inputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[L3-Sub Category]"
+                                  cachedCodepage="1252"
+                                  cachedDataType="str"
+                                  cachedLength="50"
+                                  cachedName="L3-Sub Category"
+                                  externalMetadataColumnId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[L3SubCategory]"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[L3-Sub Category]" />
+                                <inputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[L1-Product ID]"
+                                  cachedCodepage="1252"
+                                  cachedDataType="str"
+                                  cachedLength="50"
+                                  cachedName="L1-Product ID"
+                                  externalMetadataColumnId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[L1ProductId]"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[L1-Product ID]" />
+                                <inputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Product_Name]"
+                                  cachedCodepage="1252"
+                                  cachedDataType="str"
+                                  cachedLength="50"
+                                  cachedName="Product_Name"
+                                  externalMetadataColumnId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductDescription]"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Product_Name]" />
+                                <inputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Week End Date]"
+                                  cachedCodepage="1252"
+                                  cachedDataType="str"
+                                  cachedLength="50"
+                                  cachedName="Week End Date"
+                                  externalMetadataColumnId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WeekEndDate]"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Week End Date]" />
+                                <inputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Sales]"
+                                  cachedCodepage="1252"
+                                  cachedDataType="str"
+                                  cachedLength="50"
+                                  cachedName="Sales"
+                                  externalMetadataColumnId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurbsideSales]"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Sales]" />
+                              </inputColumns>
+                              <externalMetadataColumns
+                                isUsed="True">
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RecId]"
+                                  dataType="i4"
+                                  name="RecId" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[L6MerchandiseArea]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="L6MerchandiseArea" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[L6]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="L6" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[L5BusinessSegment]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="L5BusinessSegment" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[L5]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="L5" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[L4Category]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="L4Category" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[L4]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="L4" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[L3SubCategory]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="L3SubCategory" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[L3]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="L3" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[L2Class]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="L2Class" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[L2]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="L2" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[L1ProductId]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="L1ProductId" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductDescription]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="255"
+                                  name="ProductDescription" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UPC]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="UPC" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Brand]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="Brand" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vendor]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="Vendor" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VendorName]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="VendorName" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[WeekEndDate]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="WeekEndDate" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurbsideQty]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="CurbsideQty" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurbsideSales]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="50"
+                                  name="CurbsideSales" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BU]"
+                                  dataType="wstr"
+                                  length="50"
+                                  name="BU" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PepsiBrand]"
+                                  dataType="wstr"
+                                  length="50"
+                                  name="PepsiBrand" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SubBU]"
+                                  dataType="wstr"
+                                  length="50"
+                                  name="SubBU" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LineageID]"
+                                  dataType="i4"
+                                  name="LineageID" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Created]"
+                                  dataType="dbTimeStamp"
+                                  name="Created" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Createdby]"
+                                  codePage="1252"
+                                  dataType="str"
+                                  length="100"
+                                  name="Createdby" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IsProcessed]"
+                                  dataType="bool"
+                                  name="IsProcessed" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FileYear]"
+                                  dataType="i4"
+                                  name="FileYear" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ReprocessCount]"
+                                  dataType="i4"
+                                  name="ReprocessCount" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FirstReprocDate]"
+                                  dataType="dbTimeStamp"
+                                  name="FirstReprocDate" />
+                                <externalMetadataColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastReprocDate]"
+                                  dataType="dbTimeStamp"
+                                  name="LastReprocDate" />
+                              </externalMetadataColumns>
+                            </input>
+                          </inputs>
+                          <outputs>
+                            <output
+                              refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                              exclusionGroup="1"
+                              isErrorOut="true"
+                              name="OLE DB Destination Error Output"
+                              synchronousInputId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                              <outputColumns>
+                                <outputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                                  dataType="i4"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                                  name="ErrorCode"
+                                  specialFlags="1" />
+                                <outputColumn
+                                  refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                                  dataType="i4"
+                                  lineageId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                                  name="ErrorColumn"
+                                  specialFlags="2" />
+                              </outputColumns>
+                              <externalMetadataColumns />
+                            </output>
+                          </outputs>
+                        </component>
+                      </components>
+                      <paths>
+                        <path
+                          refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV.Paths[Derived Column Output]"
+                          endId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                          name="Derived Column Output"
+                          startId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Derived Column.Outputs[Derived Column Output]" />
+                        <path
+                          refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV.Paths[Flat File Source Output]"
+                          endId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Derived Column.Inputs[Derived Column Input]"
+                          name="Flat File Source Output"
+                          startId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source.Outputs[Flat File Source Output]" />
+                      </paths>
+                    </pipeline>
+                  </DTS:ObjectData>
+                </DTS:Executable>
+                <DTS:Executable
+                  DTS:refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\SQL Trunc Targ"
+                  DTS:CreationName="Microsoft.ExecuteSQLTask"
+                  DTS:Description="Execute SQL Task"
+                  DTS:DTSID="{9FC38DD8-0F1B-4881-AA06-523627167BE9}"
+                  DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+                  DTS:LocaleID="-1"
+                  DTS:ObjectName="SQL Trunc Targ"
+                  DTS:ThreadHint="1">
+                  <DTS:Variables />
+                  <DTS:ObjectData>
+                    <SQLTask:SqlTaskData
+                      SQLTask:Connection="{B8E0FAAE-AB0B-4604-BF3B-CCAB73924DD2}"
+                      SQLTask:SqlStatementSource="truncate table [DataStage].[STG_MeijerSales]&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+                  </DTS:ObjectData>
+                </DTS:Executable>
+              </DTS:Executables>
+              <DTS:PrecedenceConstraints>
+                <DTS:PrecedenceConstraint
+                  DTS:refId="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+                  DTS:CreationName=""
+                  DTS:DTSID="{6DB3B32F-C662-43DC-BAAA-D614EF87FBD4}"
+                  DTS:From="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\SQL Trunc Targ"
+                  DTS:LogicalAnd="True"
+                  DTS:ObjectName="Constraint"
+                  DTS:To="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV" />
+              </DTS:PrecedenceConstraints>
+              <DTS:ForEachVariableMappings>
+                <DTS:ForEachVariableMapping
+                  DTS:CreationName=""
+                  DTS:DTSID="{31C1BD8C-8FFB-4D22-A527-B596FF449F4F}"
+                  DTS:ObjectName="{31C1BD8C-8FFB-4D22-A527-B596FF449F4F}"
+                  DTS:ValueIndex="0"
+                  DTS:VariableName="User::vCSVFilePath" />
+              </DTS:ForEachVariableMappings>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQ Prep Data\SQL WalmartOG"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3F36A4FD-3E5C-440A-8884-8EA9844C51A9}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL WalmartOG"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B8E0FAAE-AB0B-4604-BF3B-CCAB73924DD2}"
+              SQLTask:SqlStatementSource="-- Run Sprocs&#xA;Exec [DataStage].[ConvertWalmartOGSalesDataFormat];&#xA;Exec [DataStage].[ProcessWalmartOGSalesData]&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SEQ Prep Data\SQL Write Man Load Log"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{C2C318E0-3DE9-49A6-BB13-81F0798BD9CA}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="SQL Write Man Load Log"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B8E0FAAE-AB0B-4604-BF3B-CCAB73924DD2}"
+              SQLTask:SqlStatementSource="drop table if exists #Walmart&#xA;&#xA;  select &#xA;  [YearNumber]&#xA;  ,stg.[WeekNumber]&#xA;  ,[YearNumber] + stg.[WeekNumber] [Full_WeekNo]&#xA;  ,dte.DateValue&#xA;  ,count (*)&#x9;[Rows]&#xA;  ,sum (OGP_Volume_Visits_SC) OGP_Volume_Visits_SC&#xA;  --,sum ([POS_Sales]) [POS_Sales]&#xA;  INTO #Walmart&#xA;  FROM [TDWH].[DataStage].[STG_Walmart_OG_2020] stg&#x9;&#xA;inner JOIN [TDWH].[Common].[WeekCalView] dte &#xA;ON dte.WalmartWeekNumber = stg.[YearNumber] + stg.[WeekNumber]  &#xA;group by&#xA;  [YearNumber]&#xA;  ,stg.[WeekNumber]&#xA;  ,dte.DateValue&#xA;  ,[YearNumber] + stg.[WeekNumber]&#xA;order by&#xA;  [YearNumber] desc&#xA;  ,stg.[WeekNumber] desc&#xA;&#xA;INSERT [TDWH].[dbo].[ManualFileLoadLog] (&#xA;[CustomerName], [Total], [Cust_Date], [Cust_WeekNo]&#xA;)&#xA;select &#xA;top 1 &#xA;'walmart_og', OGP_Volume_Visits_SC, DateValue, [Full_WeekNo]&#xA;from #Walmart&#xA;order by DateValue DESC" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQ Prep Data.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{13FD3C0E-F92F-4F61-A01F-68D75533BA64}"
+          DTS:EvalOp="3"
+          DTS:Expression="LEN( @[User::vPythonCmd]  ) &gt; 0"
+          DTS:From="Package\SEQ Prep Data\Expression Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SEQ Prep Data\PROC Python Cr Load File" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQ Prep Data.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{985F9E0E-1D11-47C7-B6F0-0B1D99CDD7B2}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[$Package::CustomerName]  == &quot;walmart_og&quot;"
+          DTS:From="Package\SEQ Prep Data\Expression Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\SEQ Prep Data\SQL WalmartOG" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQ Prep Data.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{6D2EB62E-E27E-44CD-88B2-5EB8DFF45BDF}"
+          DTS:EvalOp="3"
+          DTS:Expression="@[$Package::CustomerName]  == &quot;meijer&quot;"
+          DTS:From="Package\SEQ Prep Data\PROC Python Cr Load File"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\SEQ Prep Data\SEQ Meijer" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SEQ Prep Data.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{6C233F2F-B391-40ED-BBC6-EC2C1421D755}"
+          DTS:From="Package\SEQ Prep Data\SQL WalmartOG"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\SEQ Prep Data\SQL Write Man Load Log" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Exec SS Agt Job"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{DD430843-ABBB-4C81-910D-561A8549A8AB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Exec SS Agt Job"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B8E0FAAE-AB0B-4604-BF3B-CCAB73924DD2}"
+          SQLTask:SqlStatementSource="EXEC MSDB.dbo.sp_start_job   &#xA;@job_name = ?&#xA;,@step_name = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::vJobName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::vJobStep"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL Prep Job Cfg 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{872020DD-50AD-4A06-908E-A3142F932106}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL Prep Job Cfg 1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B8E0FAAE-AB0B-4604-BF3B-CCAB73924DD2}"
+          SQLTask:SqlStatementSource="DROP TABLE IF EXISTS #TEMP_PythonJobCfg&#xA;&#xA;DECLARE @stdpyprog VARCHAR(99) = 'main.py'&#xA;DECLARE @stddelay VARCHAR(99) = '00:01:30'&#xA;DECLARE @StdOutlookReminderDelay INT = 60;&#xA;&#xA;CREATE TABLE #TEMP_PythonJobCfg (&#xA;Customer VARCHAR(99)&#xA;,PythonCmd VARCHAR(99)&#xA;,SSAgentJob VARCHAR(99)&#xA;,SSAgentStep VARCHAR(99)&#xA;,SSAgentJobChkDelay VARCHAR(99)&#xA;,SSAgentJobChkOutlookReminderDelayMin VARCHAR(33)&#xA;,Created DATETIME DEFAULT GETDATE()&#xA;,CreatedBy VARCHAR(99) DEFAULT SYSTEM_USER&#xA;)&#xA;&#xA;INSERT #TEMP_PythonJobCfg (&#xA;Customer, PythonCmd, SSAgentJob, SSAgentStep, SSAgentJobChkDelay&#xA;)&#xA;VALUES&#xA; ('sams'&#x9;&#x9;&#x9;,@stdpyprog&#x9;&#x9;,'GECM_RefreshSams'&#x9;&#x9;&#x9;&#x9;,'GECM_ET_SamsDotCom',&#x9;@stddelay)&#xA;,('sams_pickup'&#x9;&#x9;,@stdpyprog&#x9;&#x9;,'GECM_RefreshSamsPickup'&#x9;&#x9;,'GECM_ET_SamsPickup',&#x9;@stddelay)&#xA;,('kroger_ship'&#x9;&#x9;,@stdpyprog&#x9;&#x9;,'GECM_RefreshKrogerShip'&#x9;&#x9;,'ET_KrogerShip',&#x9;&#x9;@stddelay)&#xA;,('kroger_pickup'&#x9;,@stdpyprog&#x9;&#x9;,'GECM_RefreshKroger'&#x9;&#x9;&#x9;,'ET_Kroger',&#x9;&#x9;&#x9;@stddelay)&#xA;,('amazon_freshpn'&#x9;,@stdpyprog&#x9;&#x9;,'GECM_RefreshAmazonFreshPN'&#x9;,'ET_FreshPN',&#x9;&#x9;&#x9;NULL)&#xA;,('albertsons'&#x9;&#x9;,@stdpyprog&#x9;&#x9;,'GECM_Refresh_Albertsons'&#x9;&#x9;,'GECM_ET_Albertsons',&#x9;'00:03:00')&#xA;,('walmart_og'&#x9;&#x9;,''&#x9;&#x9;&#x9;&#x9;,'GECM_RefreshWalmartOG'&#x9;&#x9;,'L_WalmartOG_Sales',&#x9;@stddelay)&#xA;,('meijer'&#x9;&#x9;&#x9;,@stdpyprog&#x9;&#x9;,'GECM_RefreshMeijer'&#x9;&#x9;&#x9;,'ET_Meijer',&#x9;&#x9;&#x9;@stddelay)&#xA;,('hyvee'&#x9;&#x9;&#x9;,@stdpyprog&#x9;&#x9;,'GECM_RefreshHyVeeSales'&#x9;&#x9;,'GECM_ET_HyVeeSales',&#x9;@stddelay)&#xA;&#xA;UPDATE targ&#xA;SET SSAgentJobChkOutlookReminderDelayMin = @StdOutlookReminderDelay&#xA;FROM #TEMP_PythonJobCfg targ&#xA;WHERE Customer = 'amazon_freshpn'&#xA;&#xA;SELECT * from #TEMP_PythonJobCfg &#xA;WHERE Customer = ?&#xA;ORDER BY Customer&#xA;&#xA;&#xA;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="SSAgentJob"
+            SQLTask:DtsVariableName="User::vJobName" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="SSAgentStep"
+            SQLTask:DtsVariableName="User::vJobStep" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="PythonCmd"
+            SQLTask:DtsVariableName="User::vPythonCmd" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="SSAgentJobChkDelay"
+            SQLTask:DtsVariableName="User::vJobCheckDelay" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="SSAgentJobChkOutlookReminderDelayMin"
+            SQLTask:DtsVariableName="User::vJobCheckOutlookDelay" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="$Package::CustomerName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{955345E3-405C-454A-BB8A-A4B27338FDC1}"
+      DTS:From="Package\SEQ Prep Data"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\SQL Exec SS Agt Job" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{8618AFCB-579D-4C64-8FB7-CC5DF6EE2392}"
+      DTS:From="Package\SQL Exec SS Agt Job"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\SEQ Job Status" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{73EDE8EF-9175-4D14-987D-56E466475097}"
+      DTS:Expression="LEN( @[User::vJobName]  ) &gt; 0"
+      DTS:From="Package\SQL Prep Job Cfg 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\SEQ Prep Data" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\SEQ Job Status\Expression Task"
+          TopLeft="149,29" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\SEQ Job Status\PROC Python Add Outlook Job Chk Reminder"
+          TopLeft="221,118" />
+        <NodeLayout
+          Size="325,42"
+          Id="Package\SEQ Job Status\PROC Python Get Job &amp; Load Status, Send Email"
+          TopLeft="11,307" />
+        <NodeLayout
+          Size="253,46"
+          Id="Package\SEQ Job Status\SQL SS Agent Job Wait, Get Status (Prog Will WAIT!!)"
+          TopLeft="28,211" />
+        <EdgeLayout
+          Id="Package\SEQ Job Status.PrecedenceConstraints[Constraint]"
+          TopLeft="202,71">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-47.5,140"
+              Start="0,0"
+              End="-47.5,132.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.8582375478927" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.8582375478927"
+                    Point2="0,56.8582375478927"
+                    Point3="-4,56.8582375478927" />
+                  <mssgle:LineSegment
+                    End="-43.5,56.8582375478927" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-43.5,56.8582375478927"
+                    Point2="-47.5,56.8582375478927"
+                    Point3="-47.5,60.8582375478927" />
+                  <mssgle:LineSegment
+                    End="-47.5,132.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-31.75,61.8582375478927,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Job Status.PrecedenceConstraints[Constraint 1]"
+          TopLeft="251,71">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80.5,47"
+              Start="0,0"
+              End="80.5,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.088122605364" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.088122605364"
+                    Point2="0,19.088122605364"
+                    Point3="4,19.088122605364" />
+                  <mssgle:LineSegment
+                    End="76.5,19.088122605364" />
+                  <mssgle:CubicBezierSegment
+                    Point1="76.5,19.088122605364"
+                    Point2="80.5,19.088122605364"
+                    Point3="80.5,23.088122605364" />
+                  <mssgle:LineSegment
+                    End="80.5,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="32.25,24.088122605364,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Job Status.PrecedenceConstraints[Constraint 2]"
+          TopLeft="154.5,257">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19,50"
+              Start="0,0"
+              End="19,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="15,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15,25"
+                    Point2="19,25"
+                    Point3="19,29" />
+                  <mssgle:LineSegment
+                    End="19,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="470,435"
+          Size="470,478"
+          Id="Package\SEQ Job Status"
+          TopLeft="77,422" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\SEQ Prep Data\Expression Task"
+          TopLeft="252,43" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\SEQ Prep Data\PROC Python Cr Load File"
+          TopLeft="70,102" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV"
+          TopLeft="102,124" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\SQL Trunc Targ"
+          TopLeft="43,25" />
+        <EdgeLayout
+          Id="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          TopLeft="119.5,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="44.5,57"
+              Start="0,0"
+              End="44.5,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5"
+                    Point2="0,28.5"
+                    Point3="4,28.5" />
+                  <mssgle:LineSegment
+                    End="40.5,28.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="40.5,28.5"
+                    Point2="44.5,28.5"
+                    Point3="44.5,32.5" />
+                  <mssgle:LineSegment
+                    End="44.5,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="249,221"
+          Size="249,264"
+          Id="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container"
+          TopLeft="48,38" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="337,357"
+          Size="337,400"
+          Id="Package\SEQ Prep Data\SEQ Meijer"
+          TopLeft="45,194" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\SEQ Prep Data\SQL WalmartOG"
+          TopLeft="384,94" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\SEQ Prep Data\SQL Write Man Load Log"
+          TopLeft="421,170" />
+        <EdgeLayout
+          Id="Package\SEQ Prep Data.PrecedenceConstraints[Constraint]"
+          TopLeft="252,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-82,38"
+              Start="0,0"
+              End="-82,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-78,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-78,0"
+                    Point2="-82,0"
+                    Point3="-82,4" />
+                  <mssgle:LineSegment
+                    End="-82,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-90,-22,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Prep Data.PrecedenceConstraints[Constraint 1]"
+          TopLeft="407,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="54.5,30"
+              Start="0,0"
+              End="54.5,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="50.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.5,0"
+                    Point2="54.5,0"
+                    Point3="54.5,4" />
+                  <mssgle:LineSegment
+                    End="54.5,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="46.5,-22,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Prep Data.PrecedenceConstraints[Constraint 2]"
+          TopLeft="170,144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="43.5,50"
+              Start="0,0"
+              End="43.5,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="39.5,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="39.5,25"
+                    Point2="43.5,25"
+                    Point3="43.5,29" />
+                  <mssgle:LineSegment
+                    End="43.5,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="13.75,30,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Prep Data.PrecedenceConstraints[Constraint 3]"
+          TopLeft="461.5,136">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="57.5,34"
+              Start="0,0"
+              End="57.5,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13"
+                    Point2="0,17"
+                    Point3="4,17" />
+                  <mssgle:LineSegment
+                    End="53.5,17" />
+                  <mssgle:CubicBezierSegment
+                    Point1="53.5,17"
+                    Point2="57.5,17"
+                    Point3="57.5,21" />
+                  <mssgle:LineSegment
+                    End="57.5,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="632,649"
+          Size="632,692"
+          Id="Package\SEQ Prep Data"
+          TopLeft="575,91" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\SQL Exec SS Agt Job"
+          TopLeft="325,314" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\SQL Prep Job Cfg 1"
+          TopLeft="322,124" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="575,551">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-98,-216"
+              Start="0,0"
+              End="-90.5,-216">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-35.3356401384083,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-35.3356401384083,0"
+                    Point2="-39.3356401384083,0"
+                    Point3="-39.3356401384083,-4" />
+                  <mssgle:LineSegment
+                    End="-39.3356401384083,-212" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-39.3356401384083,-212"
+                    Point2="-39.3356401384083,-216"
+                    Point3="-43.3356401384083,-216" />
+                  <mssgle:LineSegment
+                    End="-90.5,-216" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="401,356">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-89,66"
+              Start="0,0"
+              End="-89,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29"
+                    Point2="0,33"
+                    Point3="-4,33" />
+                  <mssgle:LineSegment
+                    End="-85,33" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-85,33"
+                    Point2="-89,33"
+                    Point3="-89,37" />
+                  <mssgle:LineSegment
+                    End="-89,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="492,145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83,178"
+              Start="0,0"
+              End="75.5,178">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="45.6851211072664,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.6851211072664,0"
+                    Point2="49.6851211072664,0"
+                    Point3="49.6851211072664,4" />
+                  <mssgle:LineSegment
+                    End="49.6851211072664,174" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.6851211072664,174"
+                    Point2="49.6851211072664,178"
+                    Point3="53.6851211072664,178" />
+                  <mssgle:LineSegment
+                    End="75.5,178" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="y"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="35,60"
+          Id="93d89e7e-d8ef-4b01-b70b-c6757869fffb"
+          TopLeft="936,807" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\OLE DB Destination"
+          TopLeft="299,293" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Derived Column"
+          TopLeft="310,195" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV\Flat File Source"
+          TopLeft="322,98" />
+        <EdgeLayout
+          Id="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV.Paths[Flat File Source Output]"
+          TopLeft="397.5,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.5,55"
+              Start="0,0"
+              End="-10.5,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5"
+                    Point2="0,27.5"
+                    Point3="-4,27.5" />
+                  <mssgle:LineSegment
+                    End="-6.5,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.5,27.5"
+                    Point2="-10.5,27.5"
+                    Point3="-10.5,31.5" />
+                  <mssgle:LineSegment
+                    End="-10.5,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SEQ Prep Data\SEQ Meijer\Foreach Loop Container\Load CSV.Paths[Derived Column Output]"
+          TopLeft="385.75,237">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56"
+              Start="0,0"
+              End="0,48.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
