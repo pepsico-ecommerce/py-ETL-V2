@@ -121,7 +121,7 @@ def send_email(cust, job, msg_body, debug=False):
     Msg = outlook.CreateItem(0) # Email
     Msg.To = "David.McIntyre.Contractor@pepsico.com" # you can add multiple emails with the ; as delimiter. E.g. test@test.com; test2@test.com;
     #Msg.CC = "test@test.com"
-    Msg.Subject = "[MAN_FILE_LOAD] Load Status for Cust '" + cust.upper() + "'" # + ' (Job: ' + job + ')'
+    Msg.Subject = "[MAN_FILE_LOAD] Load Status for '" + cust.upper() + "'" # + ' (Job: ' + job + ')'
     Msg.BodyFormat = 2
     Msg.HTMLBody = msg_body
     #Msg.display()

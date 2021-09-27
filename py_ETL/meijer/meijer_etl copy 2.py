@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 import re
-import numpy as np
+
 
 class LoadMeijer:
 
@@ -17,12 +17,12 @@ class LoadMeijer:
         return df
 
     def pre_process_data(self, df):
-        df.columns = df.columns.str.strip()
+        df.columns = df.columns.str.rstrip()
         repl_col = 'Sales $'
         if repl_col in df.columns:
             df = df.rename(columns={repl_col: 'Sales'})
         # Set Product_Name col
-        repl_col_newval = 'Product_Name'
+        # repl_col_newval = 'Product_Name'
         # repl_col = 'Product'
         # if repl_col in df.columns:
         #     df = df.rename(columns={repl_col: repl_col_newval})
@@ -30,12 +30,6 @@ class LoadMeijer:
         if repl_col in df.columns:
             df = df.rename(columns={repl_col: repl_col_newval})
         repl_col = 'Unnamed: 2'
-        if repl_col in df.columns:
-            df = df.rename(columns={repl_col: repl_col_newval})
-
-        # Week col
-        repl_col = 'Week'
-        repl_col_newval = 'Week End Date'
         if repl_col in df.columns:
             df = df.rename(columns={repl_col: repl_col_newval})
 
@@ -80,13 +74,11 @@ class LoadMeijer:
         col_names = list(df)
         print(col_names)
 
-        # Zap blank rows 
-        #print(df.tail())
-        num_rows = df.shape[0]
-        print ('Old row count', num_rows)
-        df.dropna(inplace=True)
-        num_rows = df.shape[0]
-        print ('New row count', num_rows)
+        # Zap rows with no sales amt (due to bad file where some rows only have 'N/A' in UPC)
+
+        # exit(1)
+
+        # print(df.columns)
         return df
 
     def process_file(self, output_file_name, src_dir):

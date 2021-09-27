@@ -33,12 +33,6 @@ class LoadMeijer:
         if repl_col in df.columns:
             df = df.rename(columns={repl_col: repl_col_newval})
 
-        # Week col
-        repl_col = 'Week'
-        repl_col_newval = 'Week End Date'
-        if repl_col in df.columns:
-            df = df.rename(columns={repl_col: repl_col_newval})
-
         # Drop time component off date
         # col_names = list(df)
         # print(col_names)

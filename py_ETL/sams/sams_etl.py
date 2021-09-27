@@ -36,11 +36,15 @@ class LoadSams:
             print(df.head())
             sample = pd.read_csv(src_dir + os.path.sep + 'sample.csv', encoding='iso-8859-1')
             final = df[sample.columns]
+            #exit(1)
             print(final.head())
+            #exit(1)
             final.to_csv(path_or_buf=output_file_name, index=False)
             df.columns = df.columns.str.lower()
             
         df[col] = pd.to_numeric(df[col], downcast="float")
         self.SALES_TOT = df[col].sum()
         # Get week no
-        self.DATE_VALUE = df['WM Year Week'.lower()].max()
+        wmweek = df['WM Year Week'.lower()].iloc[0]
+        #self.DATE_VALUE = df['WM Year Week'.lower()].max()
+        self.DATE_VALUE = wmweek

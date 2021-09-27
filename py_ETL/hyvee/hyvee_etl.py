@@ -16,6 +16,8 @@ class LoadHyVee:
         return df
 
     def pre_process_data(self, df):
+        # Delete extraneous cols
+        del df['Manuf Code']
         return df
 
     def convert_datenum_to_date(self, df, col):

@@ -22,7 +22,8 @@ class LoadKrogerShip:
         first_row = df.columns[0]
         wkend_date = first_row[-10:]
         # print(wkend_date)
-        date_time_obj = datetime.strptime(wkend_date, '%m/%d/%Y')
+        #date_time_obj = datetime.strptime(wkend_date, '%m/%d/%Y')
+        date_time_obj = datetime.strptime(wkend_date, '%Y-%m-%d')
         # print(date_time_obj)
         date_str = date_time_obj.strftime("%Y-%m-%d")
         # print(date_str)
@@ -30,10 +31,16 @@ class LoadKrogerShip:
 
     def pre_process_data(self, df, kroger_desc):
         # Delete extraneous cols
-        del df['Unnamed: 13']
-        del df['Unnamed: 14']
+        #print(df.columns)
+        #exit(1)
+        if 'Unnamed: 13' in df.columns:
+            del df['Unnamed: 13']
+        if 'Unnamed: 14' in df.columns:
+            del df['Unnamed: 14']
         # Insert initial col w/ date
         df.insert(loc=0, column='KROGER DESC', value=kroger_desc)
+        del df['Avg Cost']
+        del df['Product Margin%']
         return df
 
     def process_file(self, output_file_name):
@@ -45,10 +52,21 @@ class LoadKrogerShip:
         if (row_count == 0):
             raise Exception('Call to get_kroger_desc_from_WkEndDate() produced no rows')
         # exit(1)
+        # Pre-process data
         df = self.pre_process_data(df, kroger_desc=kroger_desc)
+        # Round numeric cols to 2 dec places
+        #col_list = ['ASP', 'AOV', 'Avg Cost']
+        #col_ix = 0
+        #while col_ix < 3:
+            #col = col_list[col_ix]
+            #df[col] = pd.to_numeric(df[col], downcast="float")
+            #df[col] = df[col].apply(lambda x: round(x, 2))
+            #col_ix += 1
+        # Write to CSV
         df.to_csv(path_or_buf=output_file_name, index=0)
         df.columns = df.columns.str.lower()
         col = 'Net Sales'.lower()
         df[col] = pd.to_numeric(df[col], downcast="float")
+        # Done
         self.SALES_TOT = df[col].sum()
         self.DATE_VALUE = week_end_date
